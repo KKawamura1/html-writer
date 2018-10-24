@@ -105,6 +105,19 @@ class Html:
         with self.tag(*tag_args, **tag_attributes):
             operator.iadd(self, content)
 
+    def self_close_tag(
+            self,
+            *tag_args,
+            **tag_attributes
+    ) -> None:
+        open_tag, _ = Html._get_open_and_close_tags(*tag_args, **tag_attributes)
+        # Seems weird, but works :)
+        self_close_tag = open_tag[:-1] + '/>'
+        # insert the self-close line
+        self.newline()
+        operator.iadd(self, self_close_tag)
+        self.newline()
+
     def newline(
             self,
             force: bool = False,
@@ -197,7 +210,8 @@ class Html:
 if __name__ == '__main__':
     import datetime
 
-    head = '<meta charset="utf-8">'
+    head = Html()
+    head.self_close_tag('meta', attributes=dict(charset='utf-8'))
     body = Html()
     with body.tag('div'):
         with body.tag('p') as h:
