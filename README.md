@@ -1,7 +1,13 @@
 html-writer
----
+====
 
-Simple html writer class for python
+
+[![PyPI](https://img.shields.io/pypi/v/html_writer.svg)](https://github.com/KKawamura1/html-writer)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/html_writer.svg)](https://github.com/KKawamura1/html-writer)
+[![PyPI - License](https://img.shields.io/pypi/l/html_writer.svg)](https://github.com/KKawamura1/html-writer)
+
+
+A simple html writer for python.
 
 
 ## Description
