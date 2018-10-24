@@ -29,6 +29,11 @@ with html.tag('div'):
 # </div>
 ``` 
 
+## Installation
+```bash
+pip install html_writer
+```
+
 
 ## Example
 ```python
