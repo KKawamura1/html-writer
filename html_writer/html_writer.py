@@ -1,11 +1,12 @@
 from __future__ import annotations
-from contextlib import contextmanager
-from typing import Sequence, Mapping, Generator, Union, Tuple, List
-import operator
-from dataclasses import dataclass
-import enum
-from collections import deque
+
 import copy
+import enum
+import operator
+from collections import deque
+from contextlib import contextmanager
+from dataclasses import dataclass
+from typing import Sequence, Mapping, Generator, Union, Tuple, List
 
 
 class WriteOutError(ValueError):
@@ -206,4 +207,3 @@ if __name__ == '__main__':
         with body.tag('dt') as h:
             h += datetime.datetime.now().strftime('%y/%m/%d %H:%M:%S')
     print(Html.html_template(head, body).to_raw_html(indent_size=2))
-
