@@ -35,7 +35,8 @@ with html.tag('div'):
 from html_writer import Html
 import datetime
 
-head = '<meta charset="utf-8">'
+head = Html()
+head.self_close_tag('meta', attributes=dict(charset='utf-8'))
 body = Html()
 with body.tag('div'):
     with body.tag('p') as h:
